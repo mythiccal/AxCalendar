@@ -6,6 +6,7 @@ help:
   - " <#DD0044>➤ <white>/axcalendar <#DDDDDD>| <#FFAAAA>Open calendar"
   - " <#DD0044>➤ <white>/axcalendar reload <#DDDDDD>| <#FFAAAA>Reload plugin"
   - " <#DD0044>➤ <white>/axcalendar reset <player> <#DDDDDD>| <#FFAAAA>Reset calendar rewards"
+  - " <#DD0044>➤ <white>/axcalendar ip <player> <#DDDDDD>| <#FFAAAA>Grant IP bypass to player"
   - " <#DD0044>➤ <white>/axcalendar debuginfo <#DDDDDD>| <#FFAAAA>Print out some useful information"
   - " "
 
@@ -23,6 +24,11 @@ reload:
 reset:
   success: "&#33FF33You have reset the calendar of %player%&#33FF33!"
   failed: "&#FF3333Can't find player &f%player%&#FF3333!"
+
+ip:
+  success: "&#33FF33You have granted IP bypass to %player%&#33FF33!"
+  failed: "&#FF3333Can't find player &f%player%&#FF3333!"
+  received: "&#33FF33You have been granted IP bypass permission!"
 
 time:
   second: "s"

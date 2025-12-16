@@ -86,7 +86,7 @@ public class CalendarGui extends GuiFrame {
                         guiItem.setAction(event -> AxCalendar.getThreadedQueue().submit(() -> {
                             if (getClaimStatus(day) != ClaimStatus.CLAIMABLE) return;
                             int maxIP = CONFIG.getInt("max-accounts-per-ip", 3);
-                            if (maxIP != -1 && maxIP <= AxCalendar.getDatabase().countIps(player, day)) {
+                            if (!player.hasPermission("axcalendar.bypass-ip-limit") && maxIP != -1 && maxIP <= AxCalendar.getDatabase().countIps(player, day)) {
                                 MESSAGEUTILS.sendLang(player, "error.too-many-ips", rp);
                                 SoundUtils.playSound(player, CONFIG.getString("sounds.failed"));
                                 return;

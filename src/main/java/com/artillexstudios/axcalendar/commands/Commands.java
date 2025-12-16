@@ -2,6 +2,7 @@ package com.artillexstudios.axcalendar.commands;
 
 import com.artillexstudios.axapi.utils.StringUtils;
 import com.artillexstudios.axcalendar.AxCalendar;
+import com.artillexstudios.axcalendar.commands.subcommands.Ip;
 import com.artillexstudios.axcalendar.commands.subcommands.Open;
 import com.artillexstudios.axcalendar.commands.subcommands.Reload;
 import com.artillexstudios.axcalendar.commands.subcommands.Reset;
@@ -54,6 +55,12 @@ public class Commands implements OrphanCommand {
     public void debuginfo(@NotNull CommandSender sender) {
         sender.sendMessage(StringUtils.formatToString("&#FF0000Current milliseconds: &f" + CalendarUtils.getZonedDateTime().toInstant().toEpochMilli()));
         sender.sendMessage(StringUtils.formatToString("&#FF0000Date: &f" + CalendarUtils.getZonedDateTime()));
+    }
+
+    @Subcommand("ip")
+    @CommandPermission("axcalendar.ip")
+    public void ip(@NotNull CommandSender sender, String playerName) {
+        Ip.INSTANCE.execute(sender, playerName);
     }
 
     private static BukkitCommandHandler handler = null;

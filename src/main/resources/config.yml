@@ -66,6 +66,7 @@ command-aliases:
   - "calendar"
   - "adventcalendar"
   - "axadventcalendar"
+  - "czadvent"
 
 # list of sounds: https://www.digminecraft.com/lists/sound_list_pc.php
 # format: <sound>|<volume>|<pitch>
